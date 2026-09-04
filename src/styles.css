@@ -161,3 +161,52 @@
     color: var(--color-foreground);
   }
 }
+
+@keyframes sweep {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(320%); }
+}
+
+@utility sweep {
+  animation: sweep 1.4s cubic-bezier(0.6, 0.1, 0.3, 1) infinite;
+}
+
+@utility slant {
+  transform: skewX(-6deg);
+  & > * {
+    display: inline-block;
+    transform: skewX(6deg);
+  }
+}
+
+@utility ai-prose {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: color-mix(in oklab, var(--foreground) 88%, transparent);
+
+  & h1, & h2, & h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--foreground);
+    margin-top: 1.1em;
+    margin-bottom: 0.4em;
+    font-size: 1rem;
+  }
+  & p { margin-bottom: 0.75em; }
+  & strong { color: var(--volt); font-weight: 700; }
+  & ul, & ol { margin: 0.5em 0 0.9em 1.1em; }
+  & ul { list-style: square; }
+  & ol { list-style: decimal; }
+  & li { margin-bottom: 0.3em; }
+  & li::marker { color: var(--brand); }
+  & a { color: var(--volt); text-decoration: underline; }
+  & code {
+    font-size: 0.85em;
+    background: color-mix(in oklab, var(--foreground) 8%, transparent);
+    padding: 0.1em 0.35em;
+  }
+  & hr { border-color: var(--line); margin: 1em 0; }
+  & table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+  & th, & td { border: 1px solid var(--line); padding: 0.4em 0.6em; text-align: left; }
+}
