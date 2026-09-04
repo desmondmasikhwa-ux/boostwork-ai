@@ -1,29 +1,83 @@
-# Welcome to your Lovable project
+# MotionDesk — AI Workplace Productivity Assistant
 
-This project was built with [Lovable](https://lovable.dev).
+A modern, responsive AI workspace that helps professionals automate daily tasks with structured prompt engineering and clean, high-contrast UI.
 
-## Build with Lovable
+![MotionDesk](public/favicon.ico)
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Features
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Smart Email Generator** — Generate polished workplace emails by choosing tone, audience, and length.
+- **Meeting Notes Summarizer** — Turn raw notes into executive summaries with key points, action items, deadlines, and open questions.
+- **AI Task Planner** — Prioritize tasks and build a realistic daily schedule.
+- **AI Research Assistant** — Produce decision-ready briefings with insights, risks, and next steps.
+- **Copilot Chat** — Ask the AI workspace assistant for drafting, planning, summarizing, and research help.
 
-## Development
+## Tech Stack
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+- [TanStack Start](https://tanstack.com/start) — Full-stack React framework
+- [React 19](https://react.dev) — UI library
+- [TypeScript](https://www.typescriptlang.org) — Type-safe development
+- [Tailwind CSS v4](https://tailwindcss.com) — Utility-first styling
+- [Zod](https://zod.dev) — Input validation
+- [Lovable AI Gateway](https://docs.lovable.dev/features/ai-gateway) — AI model access
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## Design
+
+Electric Athletic design direction: dark ink/navy surfaces, high-contrast orange and volt-lime accents, skewed labels, and a persistent sidebar dashboard layout. Fully responsive for desktop and mobile.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- Bun or npm
+
+### Install dependencies
+
+```bash
+bun install
+# or
+npm install
+```
+
+### Run the development server
+
+```bash
+bun run dev
+# or
 npm run dev
 ```
 
-## Built with
+The app runs at `http://localhost:8080`.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+### Build for production
+
+```bash
+bun run build
+# or
+npm run build
+```
+
+## AI Configuration
+
+The app uses the Lovable AI Gateway. Make sure `LOVABLE_API_KEY` is configured in your project environment. No additional API keys are required.
+
+## Project Structure
+
+```text
+src/
+  components/        # Shared UI components (AppShell, tool UI primitives)
+  lib/
+    ai.functions.ts  # Server functions and AI prompts
+  routes/            # TanStack Start file-based routes
+  styles.css         # Theme tokens, typography, and utilities
+```
+
+## Important Notes
+
+- AI-generated content may require human review. Always verify names, dates, and figures before sending or publishing.
+- Server functions run on the edge and read `LOVABLE_API_KEY` at call time.
+
+## License
+
+This project is built and owned by you via [Lovable](https://lovable.dev).
